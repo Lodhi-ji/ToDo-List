@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/navbar'
 import { v4 as uuidv4 } from 'uuid';
+import { FaRegEdit } from "react-icons/fa";
+import { RiDeleteBin2Fill } from "react-icons/ri";
 
 
 function App() {
@@ -69,6 +71,7 @@ function App() {
       <div className='container mx-auto p-4 bg-amber-50 w-[70%] my-5 rounded-xl min-h-[70vh]'>
 
         <div className = "addTodo">
+          <h1 className='font-bold p-2 text-green-800 text-2xl text-center font-serif'>MyTask : Plan. Prioritize. Perform.</h1>
           <h2 className='font-bold p-2 text-center font-serif'>Add a new Todo</h2>
           <div className = "addTodo flex justify-around">
             <input onChange={handleChange} value={todo} type="text" placeholder='Enter your task' className='w-[40%] p-2 rounded-md border-2' />
@@ -93,8 +96,8 @@ function App() {
                 <h3 className={`${item.isCompleted ? "line-through" : ""} inline`}>{item.todo}</h3>
               </div>
               <div className="todo-buttons">
-                <button onClick={(e)=>{handleEdit(e,item.id)}} className='bg-blue-500 text-white p-1 rounded-md m-1'>Edit</button>
-                <button onClick={(e)=>{handleDelete(e,item.id)}} className='bg-red-500 text-white p-1 rounded-md m-1'>Delete</button>
+                <button onClick={(e)=>{handleEdit(e,item.id)}} className='bg-blue-500 text-white p-1 rounded-md m-1'><FaRegEdit /> </button>
+                <button onClick={(e)=>{handleDelete(e,item.id)}} className='bg-red-500 text-white p-1 rounded-md m-1'><RiDeleteBin2Fill /></button>
               </div>
             </div>
           </div>
